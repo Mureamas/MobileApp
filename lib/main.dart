@@ -1,8 +1,13 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers
 
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'style.dart';
+
 import 'beadData.dart';
+
+import 'package:http/http.dart' as http;
 
 main() {
   return runApp(
@@ -148,16 +153,70 @@ class HomePage extends StatelessWidget {
             ),
           ),
 
-          ListView.builder(
-            shrinkWrap: true,
-            physics: ClampingScrollPhysics(),
-            itemCount: null,
-            itemBuilder: (context, index){
+          FutureBuilder<List<Object>>(
+            future: products(),
+            builder: (context, snapshot) {
+              if (!snapshot.hasData) {
+                //return progress
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              } else {
+                //return widget
+                return ListView.builder(
+                  shrinkWrap: true,
+                  physics: ClampingScrollPhysics(),
+                  itemCount: 3,
+                  itemBuilder: (context, index) {
+                    
+
+
+
+
+                  },
+                );
+              }
             },
           )
-          
         ], //children
       ),
     );
   } //ef
-}//ec
+
+  List<Beaddata> convertJsonToListOfBead() {
+    //convert the Json text into the list of objects
+    var objects = json.decode(text) as List;
+    //convert from the list of object into the list of beads
+    List<Beaddata> list1 =
+        objects.map((peach) => Beaddata.fromMap(peach)).toList();
+    print(list1);
+    return list1;
+  }
+
+  Future<String> downloadData() async {
+    var result = await http.get(Uri.parse(basedUrlData));
+    if (result.statusCode == 200) {
+      return result.body;
+    } else {
+      return Future.value("");
+    }
+  } //ef
+
+  Future<List<Beaddata>> products() async {
+    text = await downloadData();
+
+    beads = convertJsonToListOfBead();
+    print("==============");
+    print("==============");
+    print(beads);
+    return beads;
+  }
+} //ec
+
+String basedUrlData =
+    "https://raw.githubusercontent.com/Mureamas/MobileApp/beadData/lib/beadData.dart";
+String basedUrlImage =
+    "https://raw.githubusercontent.com/Mureamas/MobileApp/beadPic/Heart_mid/Best%20Seller/";
+
+List<Beaddata> beads =[];
+  String text = "";
