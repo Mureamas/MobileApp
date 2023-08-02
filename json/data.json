@@ -1,0 +1,83 @@
+[
+    {
+        "productId":1,
+        "productName":"Invisible butterfly",
+        "productPrice":200.50,
+        "productQty":5,
+        "productCategory":"Bracelet",
+        "image":"Invisible butterfly.jpg"
+    },
+
+    {
+        "productId":2,
+        "productName":"Ribbon pastel",
+        "productPrice":300.50,
+        "productQty":3,
+        "productCategory":"Necklace",
+        "image":"Ribbon pastel.jpg"
+    },
+
+    {
+        "productId":3,
+        "productName":"Virgin flower",
+        "productPrice":200.50,
+        "productQty":5,
+        "productCategory":"Bracelet",
+        "image":"Virgin flower.jpg"
+    },
+
+    {
+        "productId":4,
+        "productName":"Dainty",
+        "productPrice":200.50,
+        "productQty":5,
+        "productCategory":"Bracelet",
+        "image":"Dainty.jpg"
+    },
+
+    {
+        "productId":5,
+        "productName":"Devil eye",
+        "productPrice":200.50,
+        "productQty":5,
+        "productCategory":"Bracelet",
+        "image":"Devil eye.jpg"
+    },
+
+    {
+        "productId":6,
+        "productName":"Man8osteen",
+        "productPrice":200.50,
+        "productQty":5,
+        "productCategory":"Bracelet",
+        "image":"Man8osteen.jpg"
+    },
+
+    {
+        "productId":7,
+        "productName":"Pearl_heart",
+        "productPrice":300.50,
+        "productQty":3,
+        "productCategory":"Necklace",
+        "image":"Pearl_heart.jpg"
+    },
+
+    {
+        "productId":8,
+        "productName":"Pollination",
+        "productPrice":300.50,
+        "productQty":3,
+        "productCategory":"Necklace",
+        "image":"Pollination.jpg"
+    },
+
+    {
+        "productId":9,
+        "productName":"Smiley",
+        "productPrice":300.50,
+        "productQty":3,
+        "productCategory":"Necklace",
+        "image":"Smiley.jpg"
+    }
+
+]
